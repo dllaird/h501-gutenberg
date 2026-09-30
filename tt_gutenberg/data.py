@@ -1,13 +1,9 @@
 import pandas as pd
-
+from tt_gutenberg import BASE_URL
 
 def load_data(name):
     """Read one of the TidyTuesday Gutenberg CSVs"""
-    url = (
-        "https://raw.githubusercontent.com/rfordatascience/tidytuesday/"
-        f"main/data/2025/2025-06-03/gutenberg_{name}.csv"
-    )
-    return pd.read_csv(url)
+    return pd.read_csv(BASE_URL + f"gutenberg_{name}.csv")
 
 
 def author_languages():
